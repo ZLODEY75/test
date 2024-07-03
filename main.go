@@ -6,10 +6,27 @@ import (
 )
 
 func home_page(page http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(page, "100 хуев мне в жопу")
+	fmt.Fprintf(page, "gg")
+
 }
-func main() {
+func contacts_page(page http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(page, "cont")
+
+}
+func donate_page(page http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(page, "donate")
+
+}
+
+func handleRequest() {
 	http.HandleFunc("/", home_page)
+	http.HandleFunc("/contacts/", contacts_page)
+	http.HandleFunc("/donate/", donate_page)
 	http.ListenAndServe(":8080", nil)
+
+}
+
+func main() {
+	handleRequest()
 
 }
