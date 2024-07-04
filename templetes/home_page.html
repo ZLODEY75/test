@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главняя страница</title>
+</head>
+<body>
+	<h1>Главняя страница</h1>
+	
+	{{ if eq .Name "bob"}}
+	<span>ну привет!</span>
+	{{ else }}
+	<span>А ты кто?</span>
+	{{ end }}
+
+	<ul>
+		{{ range .Hoobbies}}
+
+<li><b>{{ . }}</b></li>
+{{ else }}
+<li><b>у нас нет записией</b></li>
+		{{ end }}
+	</ul>
+
+	<p>Пользователь:{{ .Name }}</p>
+	<p>Возраст:{{ .Age }}</p>
+	<p>Баланс:{{ .Money }}</p>
+</body>
+</html>
